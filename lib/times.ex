@@ -9,4 +9,9 @@ defmodule Times do
     IO.puts "#{n} times 4"
     n * 4
   )
+
+
+  def quadruple(n) do
+    double(double(n))
+  end
 end
