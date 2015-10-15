@@ -18,4 +18,19 @@ defmodule Chapter6Test do
     assert Times.quadruple(4) == 16
   end
 
+  test "modules_and_function-4" do
+    assert Sum.of(5) == 5 + 4 + 3 + 2 + 1
+  end
+
+
+  test "modules_and_function-5" do
+    assert Gcd.of(12, 4) == 4
+
+    assert Gcd.of(1, 1) == 1
+
+    assert Gcd.of(5, 20) == 5
+
+    assert Gcd.of(12, 42) == 6
+  end
+
 end
