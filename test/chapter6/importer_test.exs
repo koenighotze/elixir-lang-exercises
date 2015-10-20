@@ -14,7 +14,7 @@ defmodule ImporterTest do
   end
 
   test "accessing attrs" do
-    v =  @TopLevel.Attrs.val
+    v =  TopLevel.Attrs.val
     assert 3 == v
   end
 end
