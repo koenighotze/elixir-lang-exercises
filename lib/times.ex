@@ -1,4 +1,4 @@
-defmodule Times do
+defmodule MyTimes do
   def double(n) do
     n * 2
   end

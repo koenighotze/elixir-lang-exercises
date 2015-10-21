@@ -2,11 +2,11 @@ defmodule ModulesAnFunctions7 do
   use ExUnit.Case
 
   test "convert a float to a string" do
-    assert false
+    assert :io.format("~.2f", [ 12.235 ] ) == "12.23"
   end
 
   test "get os env variable" do
-    assert false
+    assert String.contains?(System.get_env("PATH"), "/usr/local/")
   end
 
   test "return extension of a file" do

@@ -18,4 +18,5 @@ defmodule ListsAndRecursion do
   def reduce([], init, func) when is_function(func), do: init
 
   def reduce([h | t], val, func), do: reduce(t, func.(h, val), func)
+
 end
