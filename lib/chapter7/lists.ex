@@ -19,4 +19,50 @@ defmodule ListsAndRecursion do
 
   def reduce([h | t], val, func), do: reduce(t, func.(h, val), func)
 
+
+  def mapsum(list, func) do
+    mapsum(0, list, func)
+  end
+
+  defp mapsum(acc, [], _) do
+    acc
+  end
+
+  defp mapsum(acc, [h | t], func) do
+      func.(h) + acc
+      |> mapsum(t, func)
+  end
+
+  def mymax([h|t]) do
+    IO.puts("Starting with #{h}")
+
+    _max(h, t)
+  end
+
+  defp _max(current, []) do
+    current
+  end
+
+  defp _max(current, [h | t]) when current < h do
+    _max(h, t)
+  end
+
+  defp _max(current, [h | t]) when current >= h do
+    _max(current, t)
+  end
+
+
+  def caesar(list, n) do
+    _caesar([], list, n)
+  end
+
+  defp _caesar(acc, [], _) do
+    acc
+  end
+
+  defp _caesar(acc, [h | t], n) do
+    _caesar(acc ++ [h + n], t, n)
+  end
+
+
 end
