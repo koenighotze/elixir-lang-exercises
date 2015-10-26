@@ -34,8 +34,6 @@ defmodule ListsAndRecursion do
   end
 
   def mymax([h|t]) do
-    IO.puts("Starting with #{h}")
-
     _max(h, t)
   end
 
@@ -62,6 +60,16 @@ defmodule ListsAndRecursion do
 
   defp _caesar(acc, [h | t], n) do
     _caesar(acc ++ [h + n], t, n)
+  end
+
+
+  def swap([]), do: []
+  def swap([a, b | t]), do: [b, a | swap(t)]
+  def swap([ _ ]), do: raise "Boom"
+
+  def myspan(from, to) when from > to, do: []
+  def myspan(from, to) do
+    [from | myspan(from + 1, to)]
   end
 
 

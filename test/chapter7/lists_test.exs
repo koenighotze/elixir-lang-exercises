@@ -34,4 +34,9 @@ defmodule ListsAndRecursionTest do
   test "reduce" do
     assert 9 == reduce([2, 3, 4], 0, &(&1 + &2))
   end
+
+
+  test "swap" do
+    assert [1, 2, 3, 4] = swap([2, 1, 4, 3])
+  end
 end

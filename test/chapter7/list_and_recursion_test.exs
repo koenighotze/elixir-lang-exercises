@@ -26,4 +26,11 @@ defmodule ListAndRecursion0Test do
   test "ListAndRecursion-3" do
     assert caesar('abcd', 3) == 'defg'
   end
+
+
+  test "ListAndRecursion-4" do
+    assert myspan(3, 3) == [3]
+
+    assert myspan(3, 10) == [3, 4, 5, 6, 7, 8, 9, 10]
+  end
 end

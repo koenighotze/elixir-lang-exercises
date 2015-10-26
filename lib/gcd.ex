@@ -5,6 +5,7 @@ defmodule Gcd do
   end
 
   def of(x, y) do
-    of(y, rem(x, y))
+    y
+    |> of(rem(x, y))
   end
 end

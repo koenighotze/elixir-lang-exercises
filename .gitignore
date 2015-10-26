@@ -1,2 +1,5 @@
 *beam
 _build
+.DS_Store
+deps/
+mix.lock
