@@ -30,7 +30,7 @@ defmodule ListAndRecursion5Test do
   test "reimplementing split" do
     res = [1, 2, 3, 4 ,5]
           |> split 3
-    assert res == { [1, 2, 3], [4, 5] }
+    assert { [1, 2, 3], [4, 5] } == res
   end
 
   test "reimplementing take" do
