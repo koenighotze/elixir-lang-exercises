@@ -31,7 +31,6 @@ defmodule Chapter10 do
 
     def take([], _), do: []
     def take(_, 0), do: []
-
     def take([h | t], num) do
       [h | take(t, num - 1)]
     end
