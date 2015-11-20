@@ -73,4 +73,39 @@ defmodule ListAndRecursion6Test do
           |> Enum.take 4
     assert [ "a", "ab", "aba", "abab" ] == res
   end
+
+
+  test "simple_unfold" do
+    res = unfold( {}, fn prev_acc -> { prev_acc , { prev_acc } } end)
+          |> Enum.take(3)
+
+    assert res == [ {}, {{}}, {{{}}} ]
+  end
+
+  test "unfold_fib" do
+    res = unfold( {0, 1}, fn { n1, n2 } -> { n1, { n2, n1 + n2 }} end)
+          |> Enum.take(10)
+
+    assert res == [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+  end
+
+
+  test "naive resource" do
+    init = fn ->
+      IO.puts("init")
+      10
+    end
+
+    close = fn val ->
+      IO.puts("close #{val}")
+    end
+
+    next = fn
+      0 -> {:halt, "Baaaehm"}
+      n -> { [ n ], n - 1  }
+    end
+
+    res = Stream.resource(init, next, close) |> Enum.take 10
+    assert res == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+  end
 end
