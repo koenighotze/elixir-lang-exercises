@@ -21,7 +21,7 @@ defmodule ListAndRecursion6Test do
 
     final = three |> Enum.to_list
 
-    assert final == [ 4, 5, 6 ]
+    assert [ 4, 5, 6 ] == final
   end
 
   test "reading word dict" do

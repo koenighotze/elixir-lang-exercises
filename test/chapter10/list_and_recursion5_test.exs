@@ -12,7 +12,7 @@ defmodule ListAndRecursion5Test do
   test "reimplementing each" do
     res = each [1, 2, 3, 4 ,5], &( IO.puts &1 )
 
-    assert res == :ok
+    assert :ok = res
   end
 
 
@@ -24,7 +24,7 @@ defmodule ListAndRecursion5Test do
     res = [1, 2, 3, 4 ,5]
           |> filter fun
 
-    assert res == [2, 4]
+    assert [2, 4] == res
   end
 
   test "reimplementing split" do
@@ -39,6 +39,6 @@ defmodule ListAndRecursion5Test do
 
     res = [1, 2, 3, 4 ,5]
           |> take 2
-    assert res = [1, 2]
+    assert [1, 2] == res
   end
 end
