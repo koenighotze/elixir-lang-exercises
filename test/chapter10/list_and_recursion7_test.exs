@@ -1,12 +1,20 @@
-defmodule Chapter10.ListAndRecursion7 do
+defmodule Chapter10.ListAndRecursion7Test do
   use ExUnit.Case
 
-  import Chapter10.ListAndRecursion7, [:functions]
+  import ListsAndRecursion, [ 'myspan' ]
+  import Chapter10.ListAndRecursion7, [ 'sieve']
 
-  test "span for primes" do
-    res = span(10)
+  doctest Chapter10.ListAndRecursion7
 
-    assert res = [1, 2, 3, 5, 7]
+  test "span" do
+    res = myspan(4, 10)
+
+    assert [4, 5, 6, 7, 8, 9, 10] == res
+  end
+
+  test "sieve of Eratosthenes" do
+    res = sieve(10)
+    assert [2, 3, 5, 7] == res
   end
 
 end
