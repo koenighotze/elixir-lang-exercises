@@ -14,8 +14,12 @@ defmodule Chapter10.ListAndRecursion7 do
   def sieve(n) do
     all = myspan(2, n)
 
-    non_primes = for x <- all, y <- myspan(2, x), y <= x/2, rem(x, y) == 0, do: x
-
+    non_primes = for x <- all,
+                     y <- myspan(2, x),
+                     y <= x/2,
+                     rem(x, y) == 0, do:
+                     x
+                     
     all -- non_primes
   end
 end
