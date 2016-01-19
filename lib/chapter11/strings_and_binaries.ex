@@ -18,4 +18,10 @@ defmodule Chapter11.StringsAndBinaries do
   defp _anagram?(first, second) do
     Enum.sort(first) == Enum.sort(second)
   end
+
+
+  def clean_exp(exp), do: Enum.filter(exp, fn(x) -> x in ~C{0123456789+-/*}  end)
+  def caclulate(exp), do: caclulate(exp, 0)
+  def caclulate([], value), do: value
+  def caclulate([h | t], value) when h in ?0..?9, do: caclulate(t, value + h - ?0)
 end
