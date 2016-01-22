@@ -31,7 +31,7 @@ end
 
 
 defmodule TopLevel.Importer do
-  import TopLevel.Inner3, [ :only [  qux: 0  ] ]
+  import TopLevel.Inner3, only: [  qux: 0  ] 
   # import TopLevel.Inner3, [ :functions ]
 
   def useTheImport(), do: ( qux() )
