@@ -1,4 +1,4 @@
-defmodule ListAndRecursion6Test do
+defmodule Chapter10.Playground do
   use ExUnit.Case
 
   import Chapter10.Streams, [:functions]
