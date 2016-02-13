@@ -28,11 +28,17 @@ defmodule Issues.GithubIssues do
   end
   def handle_response({:error, error}), do: {:error, error.reason}
 
-  def report_error({:error, data}) do
+  def report_error(data) do
     message = data
-    |> List.keyfind("message", 0)
-
+      |> extract_error
     IO.puts("Error fetching data: #{message}")
     System.halt(2)
+  end
+
+  def extract_error(data) do
+    {"message", message} = data
+    |> List.keyfind("message", 0)
+
+    message
   end
 end
