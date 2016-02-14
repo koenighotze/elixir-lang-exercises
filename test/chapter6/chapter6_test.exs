@@ -7,7 +7,7 @@ defmodule Chapter6Test do
   # end
 
   test "modules_and_functions-1" do
-    assert Times.trice(3) == 9
+    assert MyTimes.trice(3) == 9
   end
 
   test "modules_and_functions-2" do
@@ -15,7 +15,7 @@ defmodule Chapter6Test do
   end
 
   test "modules_and_functions-3" do
-    assert Times.quadruple(4) == 16
+    assert MyTimes.quadruple(4) == 16
   end
 
   test "modules_and_function-4" do

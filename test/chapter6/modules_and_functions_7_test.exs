@@ -30,7 +30,7 @@ defmodule ModulesAnFunctions7 do
   end
 
   test "execute shell command" do
-    {res, 0} = System.cmd "find", ["/etc"]
+    {res, _} = System.cmd "find", ["/etc"]
 
     res
     |> split("\n")
