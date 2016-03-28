@@ -1,1 +1,1 @@
-docker run -ti --name=elixir-lang -v ~/dev/elixir/elixir-lang-exercises/:/home/elixir/src/ koenighotze/elixir /bin/bash
+docker run -ti --name=elixir-lang -v $(pwd):/home/elixir/src/ koenighotze/elixir /bin/bash
