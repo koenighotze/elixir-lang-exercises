@@ -1,13 +1,11 @@
 defmodule Chapter14.WorkingWithProcesses2Test do
   use ExUnit.Case
 
-
   def echo do
     receive do
       {sender, token} -> send sender, token
     end
   end
-
 
   test "echo echoes token" do
     pid = spawn(Chapter14.WorkingWithProcesses2Test, :echo, [])
