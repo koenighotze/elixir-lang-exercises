@@ -1,6 +1,5 @@
 defmodule Chapter14.WorkingWithProcesses5Test do
   use ExUnit.Case
-  import :timer, only: [ sleep: 1 ]
   import Chapter14.WorkingWithProcesses
 
   test "ping_child" do
