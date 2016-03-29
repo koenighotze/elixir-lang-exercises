@@ -16,7 +16,7 @@ defmodule Chapter14.WorkingWithProcesses do
     sleep(dur)
   end
 
-  def ping_child(parent), do: send parent, {:ok, "Message"}
+  def ping_child(parent), do: send(parent, {:ok, "Message"})
 
   def receive_all_messages, do: receive_all_messages([])
 
