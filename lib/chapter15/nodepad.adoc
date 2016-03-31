@@ -1,0 +1,37 @@
+# Notes about Nodes
+
+In first container
+
+```elixir
+bash-4.3$ iex --name node_one@172.17.0.2 --cookie foo
+Erlang/OTP 18 [erts-7.1] [source] [64-bit] [async-threads:10] [kernel-poll:false]
+
+Interactive Elixir (1.1.1) - press Ctrl+C to exit (type h() ENTER for help)
+```
+
+Second container
+```
+bash-4.3$ iex --name node_two@172.17.0.3 --cookie foo
+Erlang/OTP 18 [erts-7.1] [source] [64-bit] [async-threads:10] [kernel-poll:false]
+
+Interactive Elixir (1.1.1) - press Ctrl+C to exit (type h() ENTER for help)
+iex(node_two@172.17.0.3)1>
+```
+
+First container
+
+```elixir
+iex(node_one@172.17.0.2)1> Node.connect :"node_two@172.17.0.3"
+true
+iex(node_one@172.17.0.2)2> Node.list
+[:"node_two@172.17.0.3"]
+iex(node_one@172.17.0.2)5> fun = fn -> IO.puts(File.ls! |> Enum.join ",") end
+#Function<20.54118792/0 in :erl_eval.expr/5>
+iex(node_one@172.17.0.2)6> fun.()
+erl_crash.dump,src,.mix,.wget-hsts,elixir-master,phoenix-master,talks-elixir-intro-master
+:ok
+iex(node_one@172.17.0.2)7> Node.spawn(:"node_two@172.17.0.3", fun)
+src,.mix,.wget-hsts,elixir-master,phoenix-master,talks-elixir-intro-master
+#PID<8090.68.0>
+iex(node_one@172.17.0.2)8>
+```
