@@ -3,3 +3,5 @@
 _build
 mix.lock
 deps/
+erl_crash.dump
+*.tmp
