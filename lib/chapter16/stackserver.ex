@@ -31,8 +31,8 @@ defmodule Chapter16.StackServer do
       case how do
        :boom ->
           raise "PENG"
-        _ ->
-          System.halt(1)
+        :hammertime ->
+          GenServer.stop(__MODULE__, :normal)
       end
   end
 
