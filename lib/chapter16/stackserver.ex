@@ -17,23 +17,25 @@ defmodule Chapter16.StackServer do
     GenServer.call __MODULE__, { :kill, how }
   end
 
-  def terminate(reason, state) do
+  def terminate(reason, _) do
     IO.puts "terminated because of #{inspect reason}"
   end
 
   def handle_call({:init, data}, _from, _), do: {:reply, data, data}
 
-  def handle_call(:pop, _from, [h | t] = stack), do: {:reply, h, t}
+  def handle_call(:pop, _from, [h | t]), do: {:reply, h, t}
 
   def handle_call(:pop, _from, _), do: {:reply, nil, []}
 
-  def handle_call({:kill, how}, _, stack) do
-      case how do
-       :boom ->
-          raise "PENG"
-        :hammertime ->
-          GenServer.stop(__MODULE__, :normal)
-      end
+  def handle_call({:kill, how}, _, state) do
+    IO.puts "Should kill myself because of #{inspect how}"
+    case how do
+     :boom ->
+        raise "PENG"
+      :hammertime ->
+        IO.puts "Stopping #{inspect __MODULE__}"
+        {:stop, :normal, state}
+    end
   end
 
   def handle_cast({:push, elem}, stack) do
