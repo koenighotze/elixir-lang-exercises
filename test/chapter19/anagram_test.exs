@@ -3,6 +3,8 @@ defmodule Chapter19.AnagramTest do
 
   import Chapter19.Anagram
 
+  import Enum, only: [ map: 2, member?: 2, all?: 1, empty?: 1, reject: 2]
+
 
   test "each original word is contained in the anagram list" do
     start_link
@@ -14,19 +16,19 @@ defmodule Chapter19.AnagramTest do
 
     anagrams =
     words
-    |> Enum.map(fn word -> {word, anagrams_of(word)} end)
+    |> map(fn word -> {word, anagrams_of(word)} end)
 
     all_found =
     words
-    |> Enum.map(
+    |> map(
       fn word ->
         {^word, perms} = List.keyfind(anagrams, word, 0)
 
-        Enum.member?(perms, word)
+        member?(perms, word)
       end
     )
 
-    assert Enum.all?(all_found)
+    assert all?(all_found)
   end
 
   test "add anagram" do
@@ -41,9 +43,17 @@ defmodule Chapter19.AnagramTest do
 
     data =
     result
-    |> Enum.reject(&( Enum.member?(words, &1) ))
+    |> reject(&( member?(words, &1) ))
 
-    assert Enum.empty?(data)
+    assert empty?(data)
   end
 
+
+  test "end to end" do
+    bootstrap
+
+    anagrams = anagrams_of("recta")
+
+    assert 1 < length(anagrams)
+  end
 end

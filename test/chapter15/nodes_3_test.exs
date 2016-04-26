@@ -5,7 +5,7 @@ defmodule Chapter15.Nodes3Test do
 
   test "starting the server registers a global name" do
     Chapter15.Nodes3.Server.start
-    assert :global.whereis_name(@name)
+    assert :global.whereis_name(:ticker)
   end
 
   test "server sends ticks" do

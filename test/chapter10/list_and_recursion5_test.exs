@@ -22,14 +22,14 @@ defmodule ListAndRecursion5Test do
     assert filter([], fun) == []
 
     res = [1, 2, 3, 4 ,5]
-          |> filter fun
+          |> filter(fun)
 
     assert [2, 4] == res
   end
 
   test "reimplementing split" do
     res = [1, 2, 3, 4 ,5]
-          |> split 3
+          |> split(3)
     assert { [1, 2, 3], [4, 5] } == res
   end
 
@@ -38,7 +38,7 @@ defmodule ListAndRecursion5Test do
 
 
     res = [1, 2, 3, 4 ,5]
-          |> take 2
+          |> take(2)
     assert [1, 2] == res
   end
 end

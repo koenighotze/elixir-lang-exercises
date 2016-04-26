@@ -13,7 +13,7 @@ defmodule MySumTest do
 
 
   test "sum a hashdict" do
-    data = [one: 1, two: 2, three: 3] |> into HashDict.new
+    data = [one: 1, two: 2, three: 3] |> into(HashDict.new)
 
     res = data |> sum_of_values
 

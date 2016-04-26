@@ -15,7 +15,7 @@ defmodule Chapter10.Playground do
     # IO.inspect(res)
 
     three = res
-            |> Stream.take 3
+            |> Stream.take(3)
 
     # IO.inspect(three)
 
@@ -27,10 +27,10 @@ defmodule Chapter10.Playground do
   test "reading word dict" do
     longestA = File.open!("/etc/hosts")
                 |> IO.stream(:line)
-                |> Enum.max_by &String.length/1
+                |> Enum.max_by(&String.length/1)
 
     longestB = File.stream!("/etc/hosts")
-                |> Enum.max_by &String.length/1
+                |> Enum.max_by(&String.length/1)
 
     assert longestA == longestB
   end
@@ -53,12 +53,12 @@ defmodule Chapter10.Playground do
 
   test "repeat" do
     repeatedly(fn -> :random.uniform() end )
-    |> Enum.take 10
+    |> Enum.take(10)
   end
 
   test "iterate" do
     res = iterate("a", fn prev -> if prev == "a" do "b" else "a" end end)
-          |> Enum.take 5
+          |> Enum.take(5)
     assert ["a", "b", "a", "b", "a"] == res
 
 
@@ -70,7 +70,7 @@ defmodule Chapter10.Playground do
                         "#{prev}a"
                       end
                     end)
-          |> Enum.take 4
+          |> Enum.take(4)
     assert [ "a", "ab", "aba", "abab" ] == res
   end
 
@@ -105,7 +105,7 @@ defmodule Chapter10.Playground do
       n -> { [ n ], n - 1  }
     end
 
-    res = Stream.resource(init, next, close) |> Enum.take 10
+    res = Stream.resource(init, next, close) |> Enum.take(10)
     assert res == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
   end
 end

@@ -2,6 +2,8 @@ defmodule Chapter19.Anagram do
 
   @name __MODULE__
 
+  import Logger
+
   def bootstrap do
     start_link
     1..4
@@ -14,7 +16,7 @@ defmodule Chapter19.Anagram do
   end
 
   def add_words(words) do
-    IO.puts("Adding #{inspect words}")
+    debug("Adding #{inspect words}")
     Agent.update(@name, &_add_words(&1, words))
   end
 
@@ -25,11 +27,10 @@ defmodule Chapter19.Anagram do
 
   ###
   defp _add_words(original, words) do
-    IO.puts "Merging #{inspect original} and #{inspect words}"
+    debug "Merging #{inspect original} and #{inspect words}"
 
     Enum.reduce(words, original, fn word, map ->
-      IO.puts "Reducing over #{word}, map is #{inspect map}"
-      #Map.put(map, word, [ word ])
+      debug "Reducing over #{word}, map is #{inspect map}"
       Map.update(map, _signature(word), [word], fn value -> [word | value] end)
     end )
   end
