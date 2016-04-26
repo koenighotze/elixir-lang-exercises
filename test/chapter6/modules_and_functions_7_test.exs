@@ -3,12 +3,13 @@ defmodule ModulesAnFunctions7 do
 
   import String, only: [split: 2, starts_with?: 2]
   import Enum, only: [map: 2, filter: 2, take: 2]
+  import Logger
 
 
   test "convert a float to a string" do
     res = :io_lib.format("~.2f", [ 12.235 ] )
     # {:ok, "12.23"}
-    IO.puts res
+    debug res
   end
 
   test "get os env variable" do

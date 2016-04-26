@@ -1,6 +1,8 @@
 defmodule Chapter16.StackServer do
   use GenServer
 
+  import Logger
+
   def start_link(init \\ []) do
     GenServer.start_link(__MODULE__, init, [ name: __MODULE__, debug: [:trace, :statistics] ])
   end
@@ -18,7 +20,7 @@ defmodule Chapter16.StackServer do
   end
 
   def terminate(reason, _) do
-    IO.puts "terminated because of #{inspect reason}"
+    info "terminated because of #{inspect reason}"
   end
 
   def handle_call({:init, data}, _from, _), do: {:reply, data, data}
@@ -28,12 +30,12 @@ defmodule Chapter16.StackServer do
   def handle_call(:pop, _from, _), do: {:reply, nil, []}
 
   def handle_call({:kill, how}, _, state) do
-    IO.puts "Should kill myself because of #{inspect how}"
+    info "Should kill myself because of #{inspect how}"
     case how do
      :boom ->
         raise "PENG"
       :hammertime ->
-        IO.puts "Stopping #{inspect __MODULE__}"
+        info "Stopping #{inspect __MODULE__}"
         {:stop, :normal, state}
     end
   end

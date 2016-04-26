@@ -2,6 +2,7 @@ defmodule ListAndRecursion5Test do
   use ExUnit.Case
 
   import Chapter10.ListAndRecursion5, [:functions]
+  import Logger
 
   test "reimplementing all" do
     assert all?([1, 2, 3, 4 ,5], &( &1 > 3 )) == false
@@ -10,7 +11,7 @@ defmodule ListAndRecursion5Test do
 
 
   test "reimplementing each" do
-    res = each [1, 2, 3, 4 ,5], &( IO.puts &1 )
+    res = each [1, 2, 3, 4 ,5], &( debug &1 )
 
     assert :ok = res
   end

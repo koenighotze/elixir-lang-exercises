@@ -2,6 +2,7 @@ defmodule Chapter19.FibTest do
   use ExUnit.Case
 
   import Chapter19.Fib
+  import Logger
 
   test "sync" do
     assert 55 == of(10)
@@ -11,7 +12,7 @@ defmodule Chapter19.FibTest do
   test "run as task" do
     worker = Task.async fn -> of(10) end
 
-    IO.puts "Waiting for worker..."
+    debug "Waiting for worker..."
 
     result = Task.await(worker)
 
@@ -20,7 +21,7 @@ defmodule Chapter19.FibTest do
 
   test "run task with different syntax" do
     worker = Task.async(Chapter19.Fib, :of, [10])
-    IO.inspect worker
+    debug("#{inspect worker}")
     assert 55 = Task.await(worker)
   end
 end

@@ -4,6 +4,8 @@ defmodule Chapter10.Playground do
   import Chapter10.Streams, [:functions]
   import Stream, [:functions]
 
+  import Logger
+
   test "read /etc/hosts" do
     read_file()
   end
@@ -12,12 +14,8 @@ defmodule Chapter10.Playground do
   test "composing streams" do
     res = Stream.map 1..5, &( &1 + 3 )
 
-    # IO.inspect(res)
-
     three = res
             |> Stream.take(3)
-
-    # IO.inspect(three)
 
     final = three |> Enum.to_list
 
@@ -48,7 +46,7 @@ defmodule Chapter10.Playground do
     |> zip(1..1_000_000)
     |> map(fn { s, i } -> ~s{ The current value of #{s} would be #{i}  } end)
     |> Enum.take(3)
-    |> IO.puts
+    |> debug
   end
 
   test "repeat" do
@@ -92,12 +90,12 @@ defmodule Chapter10.Playground do
 
   test "naive resource" do
     init = fn ->
-      IO.puts("init")
+      debug("init")
       10
     end
 
     close = fn val ->
-      IO.puts("close #{val}")
+      debug("close #{val}")
     end
 
     next = fn

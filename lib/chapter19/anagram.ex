@@ -1,6 +1,6 @@
 defmodule Chapter19.Anagram do
 
-  @name __MODULE__
+  @name {:global, __MODULE__}
 
   import Logger
 

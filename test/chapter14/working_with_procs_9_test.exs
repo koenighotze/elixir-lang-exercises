@@ -1,18 +1,19 @@
 defmodule Chapter14.WorkingWithProcesses9Test do
   use ExUnit.Case
   import Chapter14.WorkingWithProcesses9
+  import Logger
 
   test "drive" do
     results = run("/etc/", "the")
 
     results
-    |> Enum.each( fn {file, matches} -> IO.puts("File: #{file} Matches: #{matches} ") end  )
+    |> Enum.each( fn {file, matches} -> debug("File: #{file} Matches: #{matches} ") end  )
 
     sum_of_matches = results
       |> Enum.map( fn {_, matches }  -> matches end )
       |> Enum.reduce(0, fn x, acc -> x + acc end)
 
-    IO.puts("Number of overall matches: #{sum_of_matches}")
+    debug("Number of overall matches: #{sum_of_matches}")
   end
 
   test "grep returns number of matches" do

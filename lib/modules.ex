@@ -1,25 +1,28 @@
 defmodule TopLevel do
+  import Logger
+
   defmodule Inner1 do
-    def foo(), do: (IO.puts "foo")
+    def foo(), do: (info "foo")
   end
 
   defmodule Inner2 do
     def bar() do
       Inner1.foo()
-      IO.puts "bar"
+      info "bar"
       TopLevel.Inner3.baz()
     end
   end
 end
 
 defmodule TopLevel.Inner3 do
+  import Logger
   def qux() do
     TopLevel.Inner2.bar()
-    IO.puts "qux"
+    info "qux"
   end
 
   def baz() do
-    IO.puts "baz"
+    info "baz"
   end
 
 end
@@ -31,7 +34,7 @@ end
 
 
 defmodule TopLevel.Importer do
-  import TopLevel.Inner3, only: [  qux: 0  ] 
+  import TopLevel.Inner3, only: [  qux: 0  ]
   # import TopLevel.Inner3, [ :functions ]
 
   def useTheImport(), do: ( qux() )
