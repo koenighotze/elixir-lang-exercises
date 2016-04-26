@@ -25,7 +25,7 @@ defmodule Chapter16.OptServers3And4Test do
 
   test "numbers can be pushed to an nonempty empty stack" do
     start_link [1, 2, 3]
-
+    push(1)
     push(6)
     assert 6 == pop
     assert 1 == pop
