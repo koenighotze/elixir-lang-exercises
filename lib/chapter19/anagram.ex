@@ -4,11 +4,25 @@ defmodule Chapter19.Anagram do
 
   import Logger
 
-  def bootstrap do
+  def prepare_node_1 do
     start_link
-    1..4
+    load_word_list(1..2)
+  end
+
+  def prepare_node_2 do
+    start_link
+    load_word_list(3..4)
+  end
+
+  defp load_word_list(range) do
+    range
     |> Enum.map(&"resources/words/list#{&1}")
     |> Chapter19.WordlistLoader.load_from_files
+  end
+
+  def bootstrap do
+    start_link
+    load_word_list(1..4)
   end
 
   def start_link do
