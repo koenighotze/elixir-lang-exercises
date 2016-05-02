@@ -16,8 +16,7 @@ defmodule Chapter20.MyIfTest do
       "yes"),
       else: "no" ])
     assert res == "no"
-    # the following will fail, as the args are evaled eagerly
-    # assert outside == "do_not_change_me"
+    assert outside == "changed"
   end
 
 end
