@@ -1,18 +1,39 @@
 defmodule Chapter21.Tracer do
   import Logger
 
-  defmacro def({fname, _, _} = definition, do: content) do # simple pattern match on body
+  import IO.ANSI
+
+  def dump_args(args) do
+    res = args
+    |> Enum.map(&inspect/1)
+    |> Enum.map(fn s -> red() <> s <> white() end)
+    |> Enum.join(",")
+    res <> cyan()
+  end
+
+  def dump_functionname(fname) do
+    white() <> "#{fname}" <> cyan()
+  end
+
+  defmacro def(definition = {fname, _, args}, do: content) do # simple pattern match on body
     IO.inspect(definition)
 
     quote do
       Kernel.def unquote(definition) do
-        # debug("Calling #{fname}")
+        debug("==> Calling #{Chapter21.Tracer.dump_functionname(unquote(fname))} (#{Chapter21.Tracer.dump_args(unquote(args))})")
 
         res = unquote(content)
 
-        # debug("Result #{res}")
+        debug("<== Result " <> white() <> "#{inspect res}" <>cyan())
         res
       end
+    end
+  end
+
+  defmacro __using__(_opts) do
+    quote do
+      import Kernel, except: [def: 2] # override def
+      import unquote(__MODULE__), only: [def: 2]
     end
   end
 end
