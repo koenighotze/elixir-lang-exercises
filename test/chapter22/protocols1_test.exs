@@ -22,6 +22,7 @@ defmodule Chapter22.Protocols1Test do
     res = rot13("abcdez")
     assert "nopqrm" == res
   end
+  
   test "rot13 any" do
     res = rot13(%{})
     assert %{} == res
