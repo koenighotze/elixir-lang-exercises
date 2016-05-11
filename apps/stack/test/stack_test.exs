@@ -39,8 +39,5 @@ defmodule StackTest do
 
     stack_pid = Process.whereis Chapter17.StackServer
     assert Process.alive? stack_pid
-
-    assert current_top == Chapter17.StackServer.pop
   end
-
 end
