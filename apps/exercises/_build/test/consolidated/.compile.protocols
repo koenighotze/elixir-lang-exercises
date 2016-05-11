@@ -1,0 +1,9 @@
+v1.
+{'Elixir.Enumerable.Chapter22.Bitmap',{impl,'Elixir.Enumerable'}}.
+{'Elixir.String.Chars.Chapter22.Bitmap',{impl,'Elixir.String.Chars'}}.
+{'Elixir.Inspect.PID',{impl,'Elixir.Inspect'}}.
+{'Elixir.Inspect.Chapter22.Bitmap',{impl,'Elixir.Inspect'}}.
+{'Elixir.Chapter22.Protocols1',protocol}.
+{'Elixir.Chapter22.Protocols1.List',{impl,'Elixir.Chapter22.Protocols1'}}.
+{'Elixir.Chapter22.Protocols1.BitString',{impl,'Elixir.Chapter22.Protocols1'}}.
+{'Elixir.Chapter22.Protocols1.Any',{impl,'Elixir.Chapter22.Protocols1'}}.

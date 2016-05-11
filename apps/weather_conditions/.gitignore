@@ -1,0 +1,8 @@
+/_build
+/cover
+/deps
+erl_crash.dump
+*.ez
+mix.lock
+elixir_lang_weather_conditions
+Elixir.WeatherConditions.PrinterTest.beam

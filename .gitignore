@@ -1,7 +1,7 @@
-.DS_Store
-*beam
-_build
-mix.lock
-deps/
+/_build
+/cover
+/deps
 erl_crash.dump
-*.tmp
+*.ez
+.DS_Store
+mix.lock

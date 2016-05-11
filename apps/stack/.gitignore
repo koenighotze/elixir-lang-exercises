@@ -1,0 +1,7 @@
+.DS_Store
+*beam
+_build
+mix.lock
+deps/
+erl_crash.dump
+*.tmp
