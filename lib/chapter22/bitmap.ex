@@ -48,4 +48,18 @@ defmodule Chapter22.Bitmap do
     end
   end
 
+  defimpl Inspect do
+    import Inspect.Algebra
+
+    def inspect(%Chapter22.Bitmap{value: x}, _opts) do
+      "Bitmap of #{x} is #{to_bitmap(x)}"
+    end
+
+    defp to_bitmap(value) do
+      :io_lib.format("~.2B", [value]) |> to_string
+    end
+    # def inspect(%Chapter22.Bitmap{value: x}, _opts) do
+    #   x
+    # end
+  end
 end
