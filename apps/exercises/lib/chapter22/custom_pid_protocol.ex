@@ -1,5 +1,5 @@
 defimpl Inspect, for: PID do
-  def inspect(pid, _opts) do
+  def inspect(_pid, _opts) do
     "Inspecting..."
   end
 end

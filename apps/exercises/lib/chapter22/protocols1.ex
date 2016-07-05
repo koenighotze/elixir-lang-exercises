@@ -27,7 +27,7 @@ defimpl Chapter22.Protocols1, for: [BitString] do
 end
 
 defimpl Chapter22.Protocols1, for: [Any] do
-  def encrypt(s, shift) do
+  def encrypt(s, _shift) do
     s
   end
 

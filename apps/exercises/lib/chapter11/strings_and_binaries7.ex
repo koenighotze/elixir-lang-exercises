@@ -1,5 +1,5 @@
 defmodule Chapter11.StringsAndBinaries7 do
-  import Enum, only: [ filter: 2, drop: 2, map: 2, each: 2  ]
+  import Enum, only: [ filter: 2, drop: 2, map: 2 ]
   import String, only: [ to_atom: 1, to_float: 1, to_integer: 1, split: 2  ]
   import Chapter10.ListAndRecursion8, only: [ apply_tax: 2 ]
 
@@ -24,7 +24,7 @@ defmodule Chapter11.StringsAndBinaries7 do
     ]
   """
   def parse_brutto_data(data) do
-    d = data
+    data
     |> filter( &( &1 != "" ))
     |> map( &( split(&1, ",") ) )
     |> map( &( line_to_record(&1) ) )

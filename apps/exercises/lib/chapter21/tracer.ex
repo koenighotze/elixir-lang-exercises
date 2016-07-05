@@ -15,7 +15,7 @@ defmodule Chapter21.Tracer do
     white() <> "#{fname}" <> cyan()
   end
 
-  defmacro def(definition = {fname, _, args}, [when: condition, do: content]) do # simple pattern match on body
+  defmacro def(_definition = {_fname, _, _args}, [when: _condition, do: content]) do # simple pattern match on body
     quote do
       unquote(content)
     end

@@ -3,7 +3,7 @@ defmodule Chapter10.ListAndRecursion8 do
     orders
   end
 
-  def apply_tax(tax_rates, []) do
+  def apply_tax(_tax_rates, []) do
     []
   end
 

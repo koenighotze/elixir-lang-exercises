@@ -12,7 +12,7 @@ defmodule Weather do
     ]
   end
 
-  defp for_location(p, []), do: []
+  defp for_location(_p, []), do: []
 
   defp for_location(p, [ head = [_, p, _, _] | rest ] ) do
     [

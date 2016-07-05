@@ -18,6 +18,6 @@ defmodule Stack do
 
     IO.puts "initial_stack is #{Application.get_env(:stack, :initial_stack)}"
 
-    {:ok, pid} = Chapter17.MainSupervisor.start_link Application.get_env(:stack, :initial_stack)
+    {:ok, _pid} = Chapter17.MainSupervisor.start_link Application.get_env(:stack, :initial_stack)
   end
 end

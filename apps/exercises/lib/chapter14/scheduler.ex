@@ -4,7 +4,7 @@ defmodule Chapter14.Scheduler do
   def drive do
     IO.puts "Driving"
     Enum.each 1..10, fn num_processes ->
-      {time, res} = :timer.tc(Chapter14.Scheduler, :run, [num_processes, Chapter14.Fibsolver, :solve_fib, [ 37, 37, 37, 37, 37, 37 ]])
+      {time, _res} = :timer.tc(Chapter14.Scheduler, :run, [num_processes, Chapter14.Fibsolver, :solve_fib, [ 37, 37, 37, 37, 37, 37 ]])
 
       IO.puts("Num Proc #{num_processes} took #{time/1_000_000} secs")
     end

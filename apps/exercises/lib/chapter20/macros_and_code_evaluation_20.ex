@@ -3,7 +3,7 @@ defmodule Chapter20.MacrosAndCodeEvaluation3 do
     _explain(expr)
   end
 
-  def _explain({op, _, [left, right]} = expr) when is_number(left) and is_number(right) do
+  def _explain({op, _, [left, right]} = _expr) when is_number(left) and is_number(right) do
     case op do
       :+ -> "add #{left} to #{right}"
       :- -> "subtract #{right} from #{left}"
@@ -12,7 +12,7 @@ defmodule Chapter20.MacrosAndCodeEvaluation3 do
     end
   end
 
-  def _explain({:+, _, [left, right]} = expr) when not is_number(left)  do
+  def _explain({:+, _, [left, right]} = _expr) when not is_number(left)  do
     "#{_explain(left)}, then add #{right}"
   end
 

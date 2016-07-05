@@ -20,9 +20,9 @@ defmodule Chapter15.Ticker do
       after @interval ->
         IO.puts "Tick..."
         clients
-        |> Enum.each fn client ->
+        |> Enum.each(fn client ->
             send client, {:tick}
-          end
+          end)
         generator(clients)
     end
   end

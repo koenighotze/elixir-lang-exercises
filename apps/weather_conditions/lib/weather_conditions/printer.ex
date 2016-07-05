@@ -39,6 +39,6 @@ defmodule WeatherConditions.Printer do
   end
 
   def print_weather_data_table(data_table) do
-    IO.puts("TABLE")
+    IO.puts("inspect #{data_table}")
   end
 end

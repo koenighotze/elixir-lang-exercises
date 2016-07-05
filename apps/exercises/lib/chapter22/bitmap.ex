@@ -28,7 +28,7 @@ defmodule Chapter22.Bitmap do
       {:ok, 1 == col[x]}
     end
 
-    def reduce({bitmap, -1}, {:cont, acc}, _fun) do
+    def reduce({_bitmap, -1}, {:cont, acc}, _fun) do
       {:done, acc}
     end
 
@@ -49,8 +49,6 @@ defmodule Chapter22.Bitmap do
   end
 
   defimpl Inspect do
-    import Inspect.Algebra
-
     def inspect(%Chapter22.Bitmap{value: x}, _opts) do
       "Bitmap of #{x} is #{to_bitmap(x)}"
     end
@@ -58,8 +56,5 @@ defmodule Chapter22.Bitmap do
     defp to_bitmap(value) do
       :io_lib.format("~.2B", [value]) |> to_string
     end
-    # def inspect(%Chapter22.Bitmap{value: x}, _opts) do
-    #   x
-    # end
   end
 end
