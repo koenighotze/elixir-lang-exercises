@@ -35,7 +35,7 @@ defmodule Chapter16.OptServers3And4Test do
       nil
   end
 
-  defp prune_stack(last) do
+  defp prune_stack(_last) do
     prune_stack(pop)
   end
 end
