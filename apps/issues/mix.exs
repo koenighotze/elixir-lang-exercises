@@ -33,8 +33,8 @@ defmodule Issues.Mixfile do
     [
     {:httpoison, "~> 0.9.0"},
     {:jsx, "~> 2.8.0"},
-    {:ex_doc, "~> 0.11.4"},
-    {:earmark, ">= 0.0.0"}
+    {:ex_doc, "~> 0.12.0"},
+    {:earmark, ">= 0.2.1"}
     ]
   end
 
