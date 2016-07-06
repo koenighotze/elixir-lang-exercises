@@ -19,8 +19,8 @@ defmodule ElixirLangWeatherConditions.Mixfile do
 
   defp deps do
     [
-      {:httpoison, "~> 0.8"},
-      {:ex_doc, "~> 0.11.4"},
+      {:httpoison, "~> 0.9"},
+      {:ex_doc, "~> 0.12.0"},
       {:earmark, ">= 0.0.0"},
       {:erlsom, "~> 1.2"}
     ]
