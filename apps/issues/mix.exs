@@ -31,7 +31,7 @@ defmodule Issues.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-    {:httpoison, "~> 0.8"},
+    {:httpoison, "~> 0.9.0"},
     {:jsx, "~> 2.8.0"},
     {:ex_doc, "~> 0.11.4"},
     {:earmark, ">= 0.0.0"}
