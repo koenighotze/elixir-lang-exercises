@@ -1,5 +1,6 @@
 defmodule Chapter17.Stash do
   use GenServer
+  import Logger
 
   def store_stack(stack) do
     GenServer.call(__MODULE__, {:store_stack, stack})
@@ -18,8 +19,8 @@ defmodule Chapter17.Stash do
     {:reply, stack, stack}
   end
 
-  def handle_cast({:store_stack, stack}, _, _) do
-    IO.puts "Storing #{inspect stack}"
+  def handle_call({:store_stack, stack}, _, _) do
+    info("Storing #{inspect stack}")
     {:reply, :ok, stack}
   end
 
