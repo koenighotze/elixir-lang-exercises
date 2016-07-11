@@ -1,5 +1,9 @@
 # Elixir Lang Exercises and Solutions
 
+Current build status: [![Build Status](https://travis-ci.org/koenighotze/elixir-lang-exercises.svg?branch=master)](https://travis-ci.org/koenighotze/elixir-lang-exercises)
+
+
+
 This repo contains code for the exercises to Dave Thomas' magnificient
 Elixir book.
 
