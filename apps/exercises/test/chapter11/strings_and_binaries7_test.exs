@@ -1,5 +1,5 @@
 defmodule Chapter11.StringsAndBinaries7Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter11.StringsAndBinaries7, [:functions]
 

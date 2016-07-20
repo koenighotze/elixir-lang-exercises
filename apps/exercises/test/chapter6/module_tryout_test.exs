@@ -1,5 +1,5 @@
 defmodule ModuleTryoutTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
 
   test "atom works" do

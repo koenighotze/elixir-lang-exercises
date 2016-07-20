@@ -1,5 +1,5 @@
 defmodule Chapter14.FibsolverTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "the solver sends ready to the scheduler" do
     spawn_link(Chapter14.Fibsolver, :solve_fib, [ self ])

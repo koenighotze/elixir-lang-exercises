@@ -1,5 +1,5 @@
 defmodule Chapter14.WorkingWithProcesses2Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   def echo do
     receive do

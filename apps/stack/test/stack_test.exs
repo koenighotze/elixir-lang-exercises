@@ -1,5 +1,5 @@
 defmodule StackTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter17.Stash, only: [ store_stack: 1, fetch_stack: 0 ]
   import Chapter17.StackServer, only: [ pop: 0, push: 1, kill_server: 1 ]

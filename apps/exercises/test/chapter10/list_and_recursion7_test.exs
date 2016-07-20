@@ -1,5 +1,5 @@
 defmodule Chapter10.ListAndRecursion7Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import ListsAndRecursion, [ 'myspan' ]
   import Chapter10.ListAndRecursion7, [ 'sieve']

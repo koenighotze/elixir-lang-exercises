@@ -1,5 +1,5 @@
 defmodule Chapter3Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "list concat concats two lists" do
     list_concat = fn a, b -> a ++ b end

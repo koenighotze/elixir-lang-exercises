@@ -1,5 +1,5 @@
 defmodule Chapter15.CircularListTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import Chapter15.CircularList
 
   test "an empty list return no next elem" do

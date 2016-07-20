@@ -1,5 +1,5 @@
 defmodule Chapter20.MacrosAndCodeEvaluation2Test do
-    use ExUnit.Case
+    use ExUnit.Case, async: true
     require Chapter20.MacrosAndCodeEvaluation2
 
     Chapter20.MacrosAndCodeEvaluation2.times_n(3)

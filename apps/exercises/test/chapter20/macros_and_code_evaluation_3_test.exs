@@ -1,5 +1,5 @@
 defmodule Chapter20.MacrosAndCodeEvaluation3Test do
-    use ExUnit.Case
+    use ExUnit.Case, async: true
     import Chapter20.MacrosAndCodeEvaluation3
 
     test "explain 1 + 2" do

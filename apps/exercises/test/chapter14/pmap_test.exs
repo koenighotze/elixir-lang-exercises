@@ -1,5 +1,5 @@
 defmodule Chapter14.PmapTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter14.Pmap
 

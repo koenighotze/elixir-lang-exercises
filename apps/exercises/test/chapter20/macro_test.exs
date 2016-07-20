@@ -1,5 +1,5 @@
 defmodule Chapter20.MacroTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter20.Macro
 

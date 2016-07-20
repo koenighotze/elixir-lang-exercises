@@ -1,5 +1,5 @@
 defmodule Chapter16.OptServers1Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   setup do
     {:ok, pid} = GenServer.start_link(Chapter16.StackServer, [], [debug: [:trace, :statistics]])

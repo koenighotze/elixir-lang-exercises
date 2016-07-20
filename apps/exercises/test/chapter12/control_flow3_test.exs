@@ -1,5 +1,5 @@
 defmodule Chapter12.ControlFlow3Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter12.ControlFlow3, [:functions]
 

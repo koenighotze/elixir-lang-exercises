@@ -1,5 +1,5 @@
 defmodule WeatherConditions.FetcherTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import WeatherConditions.Fetcher, [:functions]
 
   doctest WeatherConditions.Fetcher

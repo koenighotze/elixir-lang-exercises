@@ -1,5 +1,5 @@
 defmodule ListAndRecursion0Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import ListsAndRecursion, [:functions]
 

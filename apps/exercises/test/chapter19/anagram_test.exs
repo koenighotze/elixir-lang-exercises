@@ -1,5 +1,5 @@
 defmodule Chapter19.AnagramTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter19.Anagram
 

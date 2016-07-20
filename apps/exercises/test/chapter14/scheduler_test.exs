@@ -1,5 +1,5 @@
 defmodule Chapter14.SchedulerTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter14.Scheduler
 

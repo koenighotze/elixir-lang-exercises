@@ -1,5 +1,5 @@
 defmodule Chapter10.ComprehensionsPlayground do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "generate squares" do
     res = for x <- 1..5, do: x * x

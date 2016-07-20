@@ -1,5 +1,5 @@
 defmodule Chapter16.SequenceServerTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter16.SequenceServer
 

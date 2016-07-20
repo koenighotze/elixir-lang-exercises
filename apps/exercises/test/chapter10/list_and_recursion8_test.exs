@@ -1,5 +1,5 @@
 defmodule Chapter10.ListAndRecursion8Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import Chapter10.ListAndRecursion8, [ :functions ]
 
 

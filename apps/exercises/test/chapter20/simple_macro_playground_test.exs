@@ -1,5 +1,5 @@
 defmodule Chapter20.SimpleMacroTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "simple if" do
     foo = if 4 / 2 == 2 do

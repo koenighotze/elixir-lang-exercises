@@ -1,5 +1,5 @@
 defmodule Chapter20.CodeEvalTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "hygienic eval" do
     a = 7

@@ -1,5 +1,5 @@
 defmodule Chapter21.TracerTryoutTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter21.TracerTryout
 

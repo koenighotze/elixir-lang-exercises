@@ -1,5 +1,5 @@
 defmodule Chapter14.MultimessageTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "Receive single message" do
 

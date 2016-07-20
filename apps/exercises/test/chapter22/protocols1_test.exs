@@ -1,5 +1,5 @@
 defmodule Chapter22.Protocols1Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter22.Protocols1
 

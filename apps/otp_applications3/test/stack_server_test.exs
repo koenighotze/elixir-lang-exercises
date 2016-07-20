@@ -1,5 +1,5 @@
 defmodule Chapter18.OtpApplications3.StackServerTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import Chapter18.OtpApplications3.StackServer
 
   test "push pop" do

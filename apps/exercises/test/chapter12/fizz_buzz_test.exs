@@ -1,5 +1,5 @@
 defmodule Chapter12.FizzBuzzCondTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import Chapter12.FizzBuzzCond, [:functions]
 
 

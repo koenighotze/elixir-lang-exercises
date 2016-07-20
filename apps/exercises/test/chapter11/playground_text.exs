@@ -1,5 +1,5 @@
 defmodule Chapter11.PlaygroundTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter11.Playground, [:functions]
 

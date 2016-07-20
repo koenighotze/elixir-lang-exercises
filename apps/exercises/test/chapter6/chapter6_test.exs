@@ -1,5 +1,5 @@
 defmodule Chapter6Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   # i can define modules within modules...
   # defmodule Times do

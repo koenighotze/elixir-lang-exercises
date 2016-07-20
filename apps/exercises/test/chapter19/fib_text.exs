@@ -1,5 +1,5 @@
 defmodule Chapter19.FibTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter19.Fib
   import Logger

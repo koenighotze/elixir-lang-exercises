@@ -1,5 +1,5 @@
 defmodule Chapter17.MainSupervisorTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter17.MainSupervisor
 

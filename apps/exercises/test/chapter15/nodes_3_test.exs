@@ -1,5 +1,5 @@
 defmodule Chapter15.Nodes3Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter15.Nodes3
 

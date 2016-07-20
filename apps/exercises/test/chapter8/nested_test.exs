@@ -1,5 +1,5 @@
 defmodule NestedTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias Chapter8.Customer
   alias Chapter8.BugReport

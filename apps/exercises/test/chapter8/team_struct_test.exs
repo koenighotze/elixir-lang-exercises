@@ -1,5 +1,5 @@
 defmodule TeamStructTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
 
   test "creating a team" do

@@ -1,5 +1,5 @@
 defmodule Chapter23.MoreCoolStuff3Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter23.MoreCoolStuff3
 

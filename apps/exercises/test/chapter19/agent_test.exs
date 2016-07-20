@@ -1,5 +1,5 @@
 defmodule Chapter19.AgentBasicsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "basic agent stuff" do
     {:ok, agent} = Agent.start(fn -> 0 end, name: CounterOnkel)

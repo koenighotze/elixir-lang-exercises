@@ -1,5 +1,5 @@
 defmodule MySumTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter8.Sum, [:functions]
   import Enum, only: [into: 2]

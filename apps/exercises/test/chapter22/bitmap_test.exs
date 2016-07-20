@@ -1,5 +1,5 @@
 defmodule Chapter22.BitmapTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import ExUnit.CaptureIO
 
   test "map behaviour" do

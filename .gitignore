@@ -8,3 +8,4 @@ mix.lock
 *beam
 _build
 _build/
+cover/

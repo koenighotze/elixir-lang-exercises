@@ -1,5 +1,5 @@
 defmodule WeatherConditions.ParserTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import WeatherConditions.Parser, [ :function ]
 

@@ -1,5 +1,5 @@
 defmodule Chapter14.MonitorTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "monitoring proc gets a DOWN message" do
     { proc_pid, proc_ref } = spawn_monitor(Chapter14.Link1, :fun, [])

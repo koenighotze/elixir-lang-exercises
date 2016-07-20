@@ -1,5 +1,5 @@
 defmodule Chapter10.Playground do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter10.Streams, [:functions]
   import Stream, [:functions]

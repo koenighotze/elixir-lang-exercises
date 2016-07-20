@@ -1,5 +1,5 @@
 defmodule Chapter20.MacroBindingTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter20.MacroBinding
 

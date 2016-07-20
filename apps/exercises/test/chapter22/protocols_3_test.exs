@@ -1,5 +1,5 @@
 defmodule Chapter22.Protocols3Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import ExUnit.CaptureIO
   import Chapter22.Protocols3
 

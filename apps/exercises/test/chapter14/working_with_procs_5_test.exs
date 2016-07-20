@@ -1,5 +1,5 @@
 defmodule Chapter14.WorkingWithProcesses5Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import Chapter14.WorkingWithProcesses
 
   test "ping_child" do

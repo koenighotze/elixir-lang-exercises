@@ -1,5 +1,5 @@
 defmodule FactorialTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "factorial of 0" do
     assert Factorial.factorial(0) == 1

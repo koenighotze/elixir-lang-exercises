@@ -1,5 +1,5 @@
 defmodule Chapter18.OtpApplications3.StashServerTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Chapter18.OtpApplications3.StashServer
 

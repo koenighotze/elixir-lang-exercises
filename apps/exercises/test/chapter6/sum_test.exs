@@ -1,5 +1,5 @@
 defmodule SumTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "sum of empty list is 0" do
     assert Sum.of([]) == 0

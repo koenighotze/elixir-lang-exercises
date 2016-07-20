@@ -1,5 +1,5 @@
 defmodule Chapter14.WorkingWithProcesses3Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import :timer, only: [ sleep: 1 ]
 
   test "WorkingWithProcesses3Test" do

@@ -1,5 +1,5 @@
 defmodule ModulesAnFunctions7 do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import String, only: [split: 2, starts_with?: 2]
   import Enum, only: [map: 2, filter: 2, take: 2]

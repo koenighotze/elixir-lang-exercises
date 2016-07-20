@@ -1,5 +1,5 @@
 defmodule Chapter5Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
 
   test "functions-2" do

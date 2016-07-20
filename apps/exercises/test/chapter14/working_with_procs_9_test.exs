@@ -1,5 +1,5 @@
 defmodule Chapter14.WorkingWithProcesses9Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   import Chapter14.WorkingWithProcesses9
   import Logger
 
