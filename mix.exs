@@ -11,6 +11,7 @@ defmodule ElixirLangExercises.Mixfile do
   end
 
   defp deps do
-    [{:excoveralls, "~> 0.5", only: :test}]
+    [{:excoveralls, "~> 0.5", only: :test},
+     {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 end

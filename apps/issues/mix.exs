@@ -35,7 +35,8 @@ defmodule Issues.Mixfile do
     #{:jsx, "~> 2.8.0"},
     {:jsx, "~> 2.6.2"},
     {:ex_doc, "~> 0.12.0"},
-    {:earmark, ">= 0.2.1"}
+    {:earmark, ">= 0.2.1"},
+    {:credo, "~> 0.4", only: [:dev, :test]}
     ]
   end
 
