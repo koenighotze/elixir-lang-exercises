@@ -37,7 +37,7 @@ defmodule Chapter10.Playground do
     # slow...
     # Enum.map(1..1_000_000, &( &1 +1 )) |> Enum.take(5)
 
-    assert Stream.map(1..1_000_000, &( &1 +1 )) |> Enum.take(5) == [2, 3, 4, 5, 6]
+    assert Stream.map(1..1_000_000, &( &1 + 1 )) |> Enum.take(5) == [2, 3, 4, 5, 6]
   end
 
 

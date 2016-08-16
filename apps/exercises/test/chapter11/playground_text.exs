@@ -23,6 +23,7 @@ defmodule Chapter11.PlaygroundTest do
     assert [:foo, :bar, :baz] == ~W/foo bar baz/a
   end
 
+  @lint {Credo.Check.Warning.OperationOnSameValues, false}
   test "single quotes - list" do
     assert is_list 'foo'
 

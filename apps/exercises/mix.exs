@@ -27,6 +27,6 @@ defmodule ElixirLangExecises.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{ :json,   ">= 0.3.0"}]
+    [{ :json, ">= 0.3.0"}, {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 end

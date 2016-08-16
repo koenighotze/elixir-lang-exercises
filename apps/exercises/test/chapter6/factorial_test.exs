@@ -6,6 +6,6 @@ defmodule FactorialTest do
   end
 
   test "factorial of 5" do
-    assert Factorial.factorial(5) == 5 * 4 * 3 * 2 * 1
+    assert Factorial.factorial(5) == 120
   end
 end

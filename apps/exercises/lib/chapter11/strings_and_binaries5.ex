@@ -4,7 +4,11 @@ defmodule Chapter11.StringsAndBinaries5 do
   def center(list), do: _center(list, max_length(list), "")
   def _center([], _width, aggregator), do: String.rstrip(aggregator, ?\n)
   def _center([h | t], width, aggregator) do
-    pad = String.duplicate(" ", (width - String.length(h))  / 2 |> Float.floor |> round)
+    pad =
+    " "
+    |> String.duplicate((width - String.length(h))  / 2
+    |> Float.floor
+    |> round)
 
     # todo use ljust(subject, len, padding)
     padded = if String.length(h) == width do

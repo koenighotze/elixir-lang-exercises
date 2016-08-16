@@ -6,7 +6,7 @@ defmodule Chapter16.SequenceServer do
   end
 
   def start_server do
-    {:ok, pid} =GenServer.start_link(__MODULE__, 100)
+    {:ok, pid} = GenServer.start_link(__MODULE__, 100)
     pid
   end
 

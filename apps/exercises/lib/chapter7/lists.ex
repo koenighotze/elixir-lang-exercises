@@ -28,9 +28,10 @@ defmodule ListsAndRecursion do
     acc
   end
 
+  @lint {Credo.Check.Refactor.PipeChainStart, false}
   defp mapsum(acc, [h | t], func) do
-      func.(h) + acc
-      |> mapsum(t, func)
+    func.(h) + acc
+    |> mapsum(t, func)
   end
 
   def mymax([h|t]) do

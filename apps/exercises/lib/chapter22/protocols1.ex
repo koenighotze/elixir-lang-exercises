@@ -15,7 +15,7 @@ end
 
 defimpl Chapter22.Protocols1, for: [BitString] do
   def encrypt(s, shift) do
-    s|> to_char_list |> Enum.map(fn c ->
+    s |> to_char_list |> Enum.map(fn c ->
       case c + shift do
         val when val > 122 -> rem(val, 122) + 96
         val -> val

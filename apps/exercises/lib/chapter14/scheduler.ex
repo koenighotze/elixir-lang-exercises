@@ -24,24 +24,32 @@ defmodule Chapter14.Scheduler do
 
     receive do
       {:ready, pid} when length(queue) > 0 ->
-        IO.puts "#{inspect pid} is ready for action"
-
-        [h | t] = queue
-        send pid, {:fib, self, h}
-
-        schedule(processes, t, results)
+        schedule_fib(pid, processes, queue, results)
       {:ready, pid} ->
-        IO.puts "Shutting down #{inspect pid}"
-        send pid, {:shutdown}
-        if (empty?(processes)) do
-          IO.puts "Finished processing...exiting"
-          schedule([], [], results)
-        else
-          schedule(List.delete(processes, pid), queue, results)
-        end
+        shutdown_pid(pid, processes, queue, results)
       {:answer, n, fib, _pid} ->
         IO.puts("Received answer fib(#{n})==#{fib}")
         schedule(processes, queue, [ {n, fib} | results ])
+    end
+  end
+
+  def schedule_fib(pid, processes, queue, results) do
+    IO.puts "#{inspect pid} is ready for action"
+
+    [h | t] = queue
+    send pid, {:fib, self, h}
+
+    schedule(processes, t, results)
+  end
+
+  def shutdown_pid(pid, processes, queue, results) do
+    IO.puts "Shutting down #{inspect pid}"
+    send pid, {:shutdown}
+    if empty?(processes) do
+      IO.puts "Finished processing...exiting"
+      schedule([], [], results)
+    else
+      schedule(List.delete(processes, pid), queue, results)
     end
   end
 end

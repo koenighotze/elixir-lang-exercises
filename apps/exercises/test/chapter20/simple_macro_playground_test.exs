@@ -12,7 +12,7 @@ defmodule Chapter20.SimpleMacroTest do
   end
 
   test "blocks are keyword lists" do
-    foo = if(4 / 2 == 2, [ do: "yes", else: "no" ])
+    foo = if 4 / 2 == 2, [ do: "yes", else: "no" ]
     assert foo == "yes"
   end
 

@@ -23,9 +23,9 @@ defmodule Chapter15.Nodes4 do
           send head, { :tick, self }
           registry_master(head, first, clients)
         {:status, sender} ->
-          status = %{clients: clients, head: head, first: first}
-          IO.puts "Sending status #{inspect status}"
-          send sender, status
+          registry_status = %{clients: clients, head: head, first: first}
+          IO.puts "Sending status #{inspect registry_status}"
+          send sender, registry_status
           registry_master(head, first, clients)
       end
     end

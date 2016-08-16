@@ -5,6 +5,7 @@ defmodule Chapter22.Bitmap do
 
   @behaviour Access
 
+  @lint {Credo.Check.Readability.ParenthesesInCondition, false}
   def fetch(%Chapter22.Bitmap{value: x}, which_bit) do
     res = if (x &&& (1 <<< which_bit)) == 0 do
       0
@@ -53,6 +54,7 @@ defmodule Chapter22.Bitmap do
       "Bitmap of #{x} is #{to_bitmap(x)}"
     end
 
+    @lint {Credo.Check.Refactor.PipeChainStart, false}
     defp to_bitmap(value) do
       :io_lib.format("~.2B", [value]) |> to_string
     end

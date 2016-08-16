@@ -3,7 +3,7 @@ defmodule Chapter12.FizzBuzzCond do
 
   def fizz_buzz(n) do
     cond do
-      rem(n, 3) == 0 and rem(n, 5) == 0->
+      rem(n, 3) == 0 and rem(n, 5) == 0 ->
         "fizzbuzz"
       rem(n, 3) == 0 ->
         "fizz"

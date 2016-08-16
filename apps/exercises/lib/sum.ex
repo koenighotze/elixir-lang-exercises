@@ -13,6 +13,6 @@ defmodule Sum do
   end
 
   def of(n) do
-    n + of(n-1)
+    n + of(n - 1)
   end
 end

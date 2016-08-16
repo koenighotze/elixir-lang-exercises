@@ -30,7 +30,7 @@ defmodule Chapter21.Tracer do
 
         res = unquote(content)
 
-        debug("<== Result " <> white() <> "#{inspect res}" <>cyan())
+        debug("<== Result " <> white() <> "#{inspect res}" <> cyan())
         res
       end
     end
