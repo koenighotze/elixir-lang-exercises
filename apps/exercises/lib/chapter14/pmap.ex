@@ -1,13 +1,11 @@
 defmodule Chapter14.Pmap do
   import Enum, only: [ map: 2 ]
 
-  :random.seed(:os.timestamp())
-
   defp spawn_and_apply(elem, fun) do
     parent = self
 
     spawn_link fn ->
-      :timer.sleep( :random.uniform(100) )
+      :timer.sleep( :rand.uniform(100) )
       send(parent, {self, fun.(elem)} )
     end
   end

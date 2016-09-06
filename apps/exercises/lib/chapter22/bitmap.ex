@@ -19,6 +19,15 @@ defmodule Chapter22.Bitmap do
     container
   end
 
+  def get(container, _key, _value) do
+    container
+  end
+
+  def pop(container, _key) do
+    container
+  end
+
+
   defimpl Enumerable do
     def count(%Chapter22.Bitmap{value: x}) do
       # is the exponent of the smallest power of two greater than your number
