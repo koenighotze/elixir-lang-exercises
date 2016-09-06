@@ -1,5 +1,5 @@
 defmodule Chapter16.OptServers5Test do
-  use ExUnit.Case, async: true
+  use ExUnit.Case
 
   import Chapter16.StackServer
 

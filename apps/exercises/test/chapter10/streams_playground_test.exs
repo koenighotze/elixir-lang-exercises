@@ -3,13 +3,11 @@ defmodule Chapter10.Playground do
 
   import Chapter10.Streams, [:functions]
   import Stream, [:functions]
-
   import Logger
 
   test "read /etc/hosts" do
     read_file()
   end
-
 
   test "composing streams" do
     res = Stream.map 1..5, &( &1 + 3 )
@@ -50,7 +48,7 @@ defmodule Chapter10.Playground do
   end
 
   test "repeat" do
-    repeatedly(fn -> :random.uniform() end )
+    repeatedly(fn -> :rand.uniform() end )
     |> Enum.take(10)
   end
 
@@ -58,7 +56,6 @@ defmodule Chapter10.Playground do
     res = iterate("a", fn prev -> if prev == "a" do "b" else "a" end end)
           |> Enum.take(5)
     assert ["a", "b", "a", "b", "a"] == res
-
 
     res = iterate("a",
                     fn prev ->

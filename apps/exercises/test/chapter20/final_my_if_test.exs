@@ -15,6 +15,7 @@ defmodule Chapter20.FinalMyIfTest do
       (outside = "changed"
       "yes"),
       else: "no" ])
+      
     assert res == "no"
     assert outside == "do_not_change_me"
   end
