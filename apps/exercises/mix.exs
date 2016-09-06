@@ -7,7 +7,11 @@ defmodule ElixirLangExecises.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     build_path: "../../_build",
+     config_path: "../../config/config.exs"
+
+]
   end
 
   # Configuration for the OTP application

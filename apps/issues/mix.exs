@@ -10,7 +10,8 @@ defmodule Issues.Mixfile do
      source_url: "https://github.com/koenighotze/elixir-lang-issues-fetcher",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     build_path: "../../_build"]
   end
 
   # Configuration for the OTP application

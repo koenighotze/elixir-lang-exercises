@@ -10,7 +10,8 @@ defmodule ElixirLangWeatherConditions.Mixfile do
      escript: escript_options,
      name: "Elixir Weather Data Application",
      source_url: "https://github.com/koenighotze/elixir-lang-exercises",
-     deps: deps]
+     deps: deps,
+     build_path: "../../_build"]
   end
 
   def application do
@@ -20,7 +21,7 @@ defmodule ElixirLangWeatherConditions.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.9.0"},
-      {:ex_doc, "~> 0.12.0"},
+      # {:ex_doc, "~> 0.12.0"},
       {:erlsom, "~> 1.2"},
       {:credo, "~> 0.4", only: [:dev, :test]}
     ]
