@@ -7,11 +7,12 @@ defmodule ElixirLangExercises.Mixfile do
      start_permanent: Mix.env == :prod,
      deps: deps,
      test_coverage: [tool: ExCoveralls]]
-
   end
 
   defp deps do
-    [{:excoveralls, "~> 0.5", only: :test},
+    [
+     {:excoveralls, github: "parroty/excoveralls"},
+      # {:excoveralls, "~> 0.5", only: :test},
      {:credo, "~> 0.4", only: [:dev, :test]}]
   end
 end
